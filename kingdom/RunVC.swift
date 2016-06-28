@@ -12,11 +12,12 @@ class RunVC: UIViewController {
     
     @IBOutlet weak var least_time: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-    var countNum = 5
+    var countNum = 2
+    var timer = NSTimer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        _ = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(RunVC.update), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(RunVC.update), userInfo: nil, repeats: true)
 
     }
     
@@ -35,6 +36,7 @@ class RunVC: UIViewController {
     }
     func update() {
         if(countNum <= 0){
+            timer.invalidate()
             moveToActionVC()
         }else{
             least_time.text = String(countNum)

@@ -24,11 +24,19 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhf-x3-bYm">
+                                <rect key="frame" x="92" y="498" width="417" height="56"/>
+                                <state key="normal" title="参加する">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateJoin:" destination="CSV-2l-etP" eventType="touchUpInside" id="91N-Wg-uAq"/>
+                                </connections>
+                            </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUE-su-6yZ">
-                                <rect key="frame" x="220" y="439" width="161" height="41"/>
+                                <rect key="frame" x="92" y="408" width="417" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="Ke9-Bk-5TJ"/>
-                                    <constraint firstAttribute="width" constant="161" id="MDs-fq-h0K"/>
+                                    <constraint firstAttribute="height" constant="56" id="Leu-M8-BeW"/>
                                 </constraints>
                                 <state key="normal" title="この人数で始める">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -37,28 +45,18 @@
                                     <segue destination="ol4-8k-DSF" kind="show" id="ebp-mT-ATT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhf-x3-bYm">
-                                <rect key="frame" x="220" y="504" width="161" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="IAG-HU-72e"/>
-                                </constraints>
-                                <state key="normal" title="参加する">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="updateJoin:" destination="CSV-2l-etP" eventType="touchUpInside" id="91N-Wg-uAq"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.090196078430000007" green="0.1058823529" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="aEg-K8-COg" firstAttribute="centerX" secondItem="iUE-su-6yZ" secondAttribute="centerX" id="Put-GN-cMK"/>
-                            <constraint firstItem="yhf-x3-bYm" firstAttribute="trailing" secondItem="iUE-su-6yZ" secondAttribute="trailing" id="ajS-S7-ALe"/>
-                            <constraint firstItem="aEg-K8-COg" firstAttribute="centerX" secondItem="0MO-AT-sBr" secondAttribute="centerX" id="eau-5l-dQJ"/>
-                            <constraint firstItem="aEg-K8-COg" firstAttribute="centerY" secondItem="0MO-AT-sBr" secondAttribute="centerY" id="gAa-20-Y7n"/>
-                            <constraint firstItem="QM9-Zd-diJ" firstAttribute="top" secondItem="yhf-x3-bYm" secondAttribute="bottom" constant="55" id="pLS-uI-yyK"/>
-                            <constraint firstItem="yhf-x3-bYm" firstAttribute="top" secondItem="iUE-su-6yZ" secondAttribute="bottom" constant="24" id="tGB-jA-HuC"/>
-                            <constraint firstItem="yhf-x3-bYm" firstAttribute="leading" secondItem="iUE-su-6yZ" secondAttribute="leading" id="tpE-Yu-vcl"/>
+                            <constraint firstItem="yhf-x3-bYm" firstAttribute="top" secondItem="iUE-su-6yZ" secondAttribute="bottom" constant="34" id="Drm-Ji-qdd"/>
+                            <constraint firstItem="iUE-su-6yZ" firstAttribute="leading" secondItem="0MO-AT-sBr" secondAttribute="leadingMargin" constant="72" id="F3P-gO-cjD"/>
+                            <constraint firstItem="aEg-K8-COg" firstAttribute="centerY" secondItem="0MO-AT-sBr" secondAttribute="centerY" id="Jpb-iY-7mq"/>
+                            <constraint firstItem="QM9-Zd-diJ" firstAttribute="top" secondItem="yhf-x3-bYm" secondAttribute="bottom" constant="46" id="N2d-4I-gac"/>
+                            <constraint firstItem="iUE-su-6yZ" firstAttribute="top" secondItem="aEg-K8-COg" secondAttribute="bottom" constant="98" id="Qm4-BU-vTW"/>
+                            <constraint firstItem="iUE-su-6yZ" firstAttribute="leading" secondItem="yhf-x3-bYm" secondAttribute="leading" id="UPA-Yq-iQS"/>
+                            <constraint firstItem="aEg-K8-COg" firstAttribute="centerX" secondItem="0MO-AT-sBr" secondAttribute="centerX" id="eL2-gH-B8v"/>
+                            <constraint firstItem="aEg-K8-COg" firstAttribute="centerX" secondItem="iUE-su-6yZ" secondAttribute="centerX" id="oWA-Wa-vOb"/>
+                            <constraint firstItem="iUE-su-6yZ" firstAttribute="trailing" secondItem="yhf-x3-bYm" secondAttribute="trailing" id="x4c-j4-48h"/>
                         </constraints>
                     </view>
                     <connections>
