@@ -10,11 +10,14 @@ import UIKit
 
 class RunVC: UIViewController {
     
+    @IBOutlet weak var least_time: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
+    var countNum = 5
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+        _ = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(RunVC.update), userInfo: nil, repeats: true)
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,7 +33,13 @@ class RunVC: UIViewController {
     func chageStatus(){
         statusLabel.text="もうすぐはじまります。"
     }
-    
-    
+    func update() {
+        if(countNum <= 0){
+            moveToActionVC()
+        }else{
+            least_time.text = String(countNum)
+            countNum -= 1
+        }
+    }
 }
 

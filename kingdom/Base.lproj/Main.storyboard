@@ -83,8 +83,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JJ-KQ-0ix">
-                                <rect key="frame" x="282" y="289" width="36" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="180" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JJ-KQ-0ix">
+                                <rect key="frame" x="286" y="289" width="29" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="逃げ回ってください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="At8-4S-uhu">
+                                <rect key="frame" x="224" y="491" width="153" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -92,12 +98,15 @@
                         </subviews>
                         <color key="backgroundColor" red="0.090196078430000007" green="0.1058823529" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="9JJ-KQ-0ix" firstAttribute="centerX" secondItem="pmB-R0-z8L" secondAttribute="centerX" id="RAb-Wi-lzo"/>
-                            <constraint firstItem="9JJ-KQ-0ix" firstAttribute="centerY" secondItem="pmB-R0-z8L" secondAttribute="centerY" id="c9u-YR-TO7"/>
+                            <constraint firstItem="9JJ-KQ-0ix" firstAttribute="centerY" secondItem="pmB-R0-z8L" secondAttribute="centerY" id="G0b-Cl-FdW"/>
+                            <constraint firstItem="9JJ-KQ-0ix" firstAttribute="centerX" secondItem="pmB-R0-z8L" secondAttribute="centerX" id="Mse-UA-EUa"/>
+                            <constraint firstItem="igd-xm-DBE" firstAttribute="top" secondItem="At8-4S-uhu" secondAttribute="bottom" constant="88" id="OBf-Rd-K9R"/>
+                            <constraint firstItem="9JJ-KQ-0ix" firstAttribute="centerX" secondItem="At8-4S-uhu" secondAttribute="centerX" id="XfI-Jw-gq5"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="statusLabel" destination="9JJ-KQ-0ix" id="zwj-WL-cXi"/>
+                        <outlet property="least_time" destination="9JJ-KQ-0ix" id="xsk-bk-V1x"/>
+                        <outlet property="statusLabel" destination="At8-4S-uhu" id="IKn-L7-adY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYy-hp-Ueo" userLabel="First Responder" sceneMemberID="firstResponder"/>
