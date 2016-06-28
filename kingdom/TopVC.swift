@@ -30,7 +30,7 @@ class TopVC: UIViewController {
     
     func setButton(button:UIButton!){
         button.layer.borderColor = UIColor.whiteColor().CGColor
-        button.layer.borderWidth = 3
+        button.layer.borderWidth = 0.5
         button.layer.cornerRadius = 3
         button.layer.masksToBounds = true
     }

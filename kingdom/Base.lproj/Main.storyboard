@@ -24,11 +24,26 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUE-su-6yZ">
-                                <rect key="frame" x="220" y="499" width="161" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="参加者は" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zT5-zl-lsW">
+                                <rect key="frame" x="266" y="210" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="md7-kF-xiI">
+                                <rect key="frame" x="220" y="520" width="160" height="40"/>
+                                <state key="normal" title="ゲームに参加する？">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateJoin:" destination="CSV-2l-etP" eventType="touchUpInside" id="y4w-UP-9bo"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUE-su-6yZ">
+                                <rect key="frame" x="220" y="400" width="160" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="161" id="RnV-kS-4aR"/>
-                                    <constraint firstAttribute="height" constant="41" id="saF-gh-Wp3"/>
+                                    <constraint firstAttribute="width" constant="160" id="f5k-R2-mn0"/>
+                                    <constraint firstAttribute="height" constant="40" id="g9F-pl-57j"/>
                                 </constraints>
                                 <state key="normal" title="この人数で始める">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,19 +55,27 @@
                         </subviews>
                         <color key="backgroundColor" red="0.090196078430000007" green="0.1058823529" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="aEg-K8-COg" firstAttribute="centerY" secondItem="0MO-AT-sBr" secondAttribute="centerY" id="5Ve-mA-FQo"/>
-                            <constraint firstItem="aEg-K8-COg" firstAttribute="centerX" secondItem="0MO-AT-sBr" secondAttribute="centerX" id="Aki-Fp-3Fp"/>
-                            <constraint firstItem="aEg-K8-COg" firstAttribute="centerX" secondItem="iUE-su-6yZ" secondAttribute="centerX" id="stM-Ts-pfH"/>
-                            <constraint firstItem="QM9-Zd-diJ" firstAttribute="top" secondItem="iUE-su-6yZ" secondAttribute="bottom" constant="60" id="xff-vu-1Ya"/>
+                            <constraint firstItem="aEg-K8-COg" firstAttribute="centerX" secondItem="iUE-su-6yZ" secondAttribute="centerX" id="1Sy-rq-50O"/>
+                            <constraint firstItem="iUE-su-6yZ" firstAttribute="leading" secondItem="md7-kF-xiI" secondAttribute="leading" id="SkB-Sw-d4i"/>
+                            <constraint firstItem="aEg-K8-COg" firstAttribute="top" secondItem="zT5-zl-lsW" secondAttribute="bottom" constant="58" id="Uhe-9m-5Tr"/>
+                            <constraint firstItem="QM9-Zd-diJ" firstAttribute="top" secondItem="md7-kF-xiI" secondAttribute="bottom" constant="40" id="Y0H-Hh-AtO"/>
+                            <constraint firstItem="iUE-su-6yZ" firstAttribute="trailing" secondItem="md7-kF-xiI" secondAttribute="trailing" id="e12-WY-3Uv"/>
+                            <constraint firstItem="iUE-su-6yZ" firstAttribute="top" secondItem="aEg-K8-COg" secondAttribute="bottom" constant="90" id="eIh-KJ-tIZ"/>
+                            <constraint firstItem="aEg-K8-COg" firstAttribute="centerY" secondItem="0MO-AT-sBr" secondAttribute="centerY" id="iKe-CX-G6G"/>
+                            <constraint firstItem="md7-kF-xiI" firstAttribute="top" secondItem="iUE-su-6yZ" secondAttribute="bottom" constant="80" id="mha-Ff-WPG"/>
+                            <constraint firstItem="zT5-zl-lsW" firstAttribute="centerX" secondItem="0MO-AT-sBr" secondAttribute="centerX" id="qDO-cD-BLR"/>
+                            <constraint firstItem="zT5-zl-lsW" firstAttribute="centerX" secondItem="aEg-K8-COg" secondAttribute="centerX" id="vcW-7p-lfQ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="joinButton" destination="md7-kF-xiI" id="M8O-nA-aWE"/>
+                        <outlet property="person_label" destination="aEg-K8-COg" id="6qr-6T-wac"/>
                         <outlet property="startButton" destination="iUE-su-6yZ" id="Tmi-Fb-Exj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPJ-gO-TGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1792" y="901"/>
+            <point key="canvasLocation" x="1792" y="877"/>
         </scene>
         <!--RunVC-->
         <scene sceneID="1TY-0d-qOP">

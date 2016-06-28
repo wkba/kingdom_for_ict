@@ -8,24 +8,45 @@
 
 import UIKit
 import CoreLocation
+import Firebase
 
 class WaitVC: UIViewController, CLLocationManagerDelegate{
     
+    @IBOutlet weak var joinButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var person_label: UILabel!
 
+    @IBAction func updateJoin(sender: AnyObject) {
+        if(isJoin == false){
+            ref.setValue(String(Int(person_label.text!)! + 1))
+            isJoin = true
+            startButton.hidden = false
+            self.joinButton.setTitle("キャンセルする", forState: UIControlState.Normal)
+        }else{
+            ref.setValue(String(Int(person_label.text!)! - 1))
+            isJoin = false
+            startButton.hidden = true
+            self.joinButton.setTitle("参加する", forState: UIControlState.Normal)
+        }
+    }
     //ルーム作成のためのCLLocationManagerのマネージャーと緯度、経度
+    var isJoin = false
     var lm: CLLocationManager!
     var latitude: CLLocationDegrees!
     var longitude: CLLocationDegrees!
-    var RoomID:String = "error"
+    
+    //TODO: delete This is for demo
+    var RoomID:String = "123456"
+    //var RoomID:String = "error"
     var uuid:String = "error"
+    var ref = Firebase(url:"https://ict-kingdom.firebaseio.com/")
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         setButton(startButton)
-        
+        setButton(joinButton)
         //ルーム作成のためのCLLocationManagerを作成、開始
         lm = CLLocationManager()
         lm.delegate = self
@@ -34,9 +55,11 @@ class WaitVC: UIViewController, CLLocationManagerDelegate{
         lm.distanceFilter = 1000
         lm.startUpdatingLocation()
 
-
-        
-        
+        ref.observeEventType(.Value, withBlock: {
+            snapshot in
+            self.person_label.text = snapshot.value as? String
+            
+        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,7 +69,7 @@ class WaitVC: UIViewController, CLLocationManagerDelegate{
     
     func setButton(button:UIButton!){
         button.layer.borderColor = UIColor.whiteColor().CGColor
-        button.layer.borderWidth = 3
+        button.layer.borderWidth = 0.5
         button.layer.cornerRadius = 3
         button.layer.masksToBounds = true
     }
