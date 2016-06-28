@@ -91,6 +91,7 @@
 		9A08B9261D1F4EF700CCACED /* winner-06 のコピー.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A08B8DA1D1F4EF600CCACED /* winner-06 のコピー.png */; };
 		9A08B9291D1F7CE700CCACED /* titleLogo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A08B9281D1F7CE700CCACED /* titleLogo_white.png */; };
 		9A08B92B1D1F7D0400CCACED /* titleLogo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A08B92A1D1F7D0400CCACED /* titleLogo_white.png */; };
+		9A818D781D1FC9060027DDFE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A818D771D1FC9060027DDFE /* CoreLocation.framework */; };
 		9AE9A8011D1E987300319CED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE9A8001D1E987300319CED /* AppDelegate.swift */; };
 		9AE9A8031D1E987300319CED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE9A8021D1E987300319CED /* ViewController.swift */; };
 		9AE9A8061D1E987300319CED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE9A8041D1E987300319CED /* Main.storyboard */; };
@@ -203,6 +204,7 @@
 		9A08B8DA1D1F4EF600CCACED /* winner-06 のコピー.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "winner-06 のコピー.png"; sourceTree = "<group>"; };
 		9A08B9281D1F7CE700CCACED /* titleLogo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleLogo_white.png; sourceTree = "<group>"; };
 		9A08B92A1D1F7D0400CCACED /* titleLogo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleLogo_white.png; sourceTree = "<group>"; };
+		9A818D771D1FC9060027DDFE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9AE9A7FD1D1E987300319CED /* kingdom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kingdom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE9A8001D1E987300319CED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AE9A8021D1E987300319CED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A818D781D1FC9060027DDFE /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +414,7 @@
 		9AE9A7F41D1E987300319CED = {
 			isa = PBXGroup;
 			children = (
+				9A818D771D1FC9060027DDFE /* CoreLocation.framework */,
 				9AE9A7FF1D1E987300319CED /* kingdom */,
 				9AE9A8141D1E987300319CED /* kingdomTests */,
 				9AE9A81F1D1E987300319CED /* kingdomUITests */,
@@ -536,6 +540,7 @@
 				TargetAttributes = {
 					9AE9A7FC1D1E987300319CED = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = R8YXP4L5MR;
 					};
 					9AE9A8101D1E987300319CED = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -829,10 +834,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = kingdom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wakabayashi.kingdom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -840,10 +848,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = kingdom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wakabayashi.kingdom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
