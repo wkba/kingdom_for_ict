@@ -101,6 +101,7 @@
 		9AE9A8161D1E987300319CED /* kingdomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE9A8151D1E987300319CED /* kingdomTests.swift */; };
 		9AE9A8211D1E987300319CED /* kingdomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE9A8201D1E987300319CED /* kingdomUITests.swift */; };
 		9AE9A8321D1E9B4000319CED /* newLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AE9A8311D1E9B4000319CED /* newLogo.png */; };
+		9AFEAF021D27B4E600C808CE /* PeripheralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFEAF011D27B4E600C808CE /* PeripheralManager.swift */; };
 		BCA62BB6E98033BE341F8B50 /* Pods_kingdomTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 656E33234F4FB65754F894D6 /* Pods_kingdomTests.framework */; };
 		F94CBF0A757FA1F0AA0BAC8E /* Pods_kingdomUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE2B92198D69590F6CE16C8 /* Pods_kingdomUITests.framework */; };
 /* End PBXBuildFile section */
@@ -227,6 +228,7 @@
 		9AE9A8201D1E987300319CED /* kingdomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kingdomUITests.swift; sourceTree = "<group>"; };
 		9AE9A8221D1E987300319CED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AE9A8311D1E9B4000319CED /* newLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newLogo.png; sourceTree = "<group>"; };
+		9AFEAF011D27B4E600C808CE /* PeripheralManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralManager.swift; sourceTree = "<group>"; };
 		9FD3CE9C9155A4B7A01E1688 /* Pods-kingdomUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kingdomUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kingdomUITests/Pods-kingdomUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9FE2B92198D69590F6CE16C8 /* Pods_kingdomUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kingdomUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFD4274B3824764E53E072F /* Pods-kingdomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kingdomTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kingdomTests/Pods-kingdomTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -484,8 +486,9 @@
 				9A08B8811D1F4D2400CCACED /* TopVC.swift */,
 				9A08B8791D1EBF1D00CCACED /* WaitVC.swift */,
 				9A08B87B1D1EBF3F00CCACED /* RunVC.swift */,
-				9A08B8851D1F4EF600CCACED /* image */,
 				9A08B87D1D1EBF5100CCACED /* ActionVC.swift */,
+				9AFEAF011D27B4E600C808CE /* PeripheralManager.swift */,
+				9A08B8851D1F4EF600CCACED /* image */,
 				9AE9A8311D1E9B4000319CED /* newLogo.png */,
 				9AE9A8041D1E987300319CED /* Main.storyboard */,
 				9AE9A8071D1E987300319CED /* Assets.xcassets */,
@@ -860,6 +863,7 @@
 				9AE9A8031D1E987300319CED /* ViewController.swift in Sources */,
 				9A08B87A1D1EBF1D00CCACED /* WaitVC.swift in Sources */,
 				9A08B87C1D1EBF3F00CCACED /* RunVC.swift in Sources */,
+				9AFEAF021D27B4E600C808CE /* PeripheralManager.swift in Sources */,
 				9A08B8781D1EBF0900CCACED /* LoseVC.swift in Sources */,
 				9AE9A8011D1E987300319CED /* AppDelegate.swift in Sources */,
 				9A08B87E1D1EBF5100CCACED /* ActionVC.swift in Sources */,
@@ -1012,6 +1016,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = kingdom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wakabayashi.kingdom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1030,6 +1035,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = kingdom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wakabayashi.kingdom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
