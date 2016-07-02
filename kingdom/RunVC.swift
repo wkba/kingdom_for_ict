@@ -18,7 +18,6 @@ class RunVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(RunVC.update), userInfo: nil, repeats: true)
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,7 +38,7 @@ class RunVC: UIViewController {
             timer.invalidate()
             moveToActionVC()
         }else{
-            least_time.text = String(countNum)
+            least_time.text = String(countNum) + "秒後始まります。"
             countNum -= 1
         }
     }

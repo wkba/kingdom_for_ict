@@ -25,7 +25,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhf-x3-bYm">
-                                <rect key="frame" x="92" y="498" width="417" height="56"/>
+                                <rect key="frame" x="92" y="516" width="417" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="izH-RF-Rag"/>
+                                </constraints>
                                 <state key="normal" title="参加する">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -34,9 +37,9 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUE-su-6yZ">
-                                <rect key="frame" x="92" y="408" width="417" height="56"/>
+                                <rect key="frame" x="92" y="352" width="417" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="Leu-M8-BeW"/>
+                                    <constraint firstAttribute="height" constant="56" id="xOp-6H-Bnb"/>
                                 </constraints>
                                 <state key="normal" title="この人数で始める">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,15 +51,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.090196078430000007" green="0.1058823529" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="yhf-x3-bYm" firstAttribute="top" secondItem="iUE-su-6yZ" secondAttribute="bottom" constant="34" id="Drm-Ji-qdd"/>
-                            <constraint firstItem="iUE-su-6yZ" firstAttribute="leading" secondItem="0MO-AT-sBr" secondAttribute="leadingMargin" constant="72" id="F3P-gO-cjD"/>
-                            <constraint firstItem="aEg-K8-COg" firstAttribute="centerY" secondItem="0MO-AT-sBr" secondAttribute="centerY" id="Jpb-iY-7mq"/>
-                            <constraint firstItem="QM9-Zd-diJ" firstAttribute="top" secondItem="yhf-x3-bYm" secondAttribute="bottom" constant="46" id="N2d-4I-gac"/>
-                            <constraint firstItem="iUE-su-6yZ" firstAttribute="top" secondItem="aEg-K8-COg" secondAttribute="bottom" constant="98" id="Qm4-BU-vTW"/>
-                            <constraint firstItem="iUE-su-6yZ" firstAttribute="leading" secondItem="yhf-x3-bYm" secondAttribute="leading" id="UPA-Yq-iQS"/>
-                            <constraint firstItem="aEg-K8-COg" firstAttribute="centerX" secondItem="0MO-AT-sBr" secondAttribute="centerX" id="eL2-gH-B8v"/>
-                            <constraint firstItem="aEg-K8-COg" firstAttribute="centerX" secondItem="iUE-su-6yZ" secondAttribute="centerX" id="oWA-Wa-vOb"/>
-                            <constraint firstItem="iUE-su-6yZ" firstAttribute="trailing" secondItem="yhf-x3-bYm" secondAttribute="trailing" id="x4c-j4-48h"/>
+                            <constraint firstItem="aEg-K8-COg" firstAttribute="centerY" secondItem="0MO-AT-sBr" secondAttribute="centerY" id="7oG-LQ-BiY"/>
+                            <constraint firstItem="QM9-Zd-diJ" firstAttribute="top" secondItem="yhf-x3-bYm" secondAttribute="bottom" constant="28" id="9hD-QH-oj8"/>
+                            <constraint firstItem="iUE-su-6yZ" firstAttribute="top" secondItem="aEg-K8-COg" secondAttribute="bottom" constant="42" id="UnD-Wi-PzE"/>
+                            <constraint firstItem="aEg-K8-COg" firstAttribute="centerX" secondItem="0MO-AT-sBr" secondAttribute="centerX" id="cZr-tF-Isb"/>
+                            <constraint firstItem="iUE-su-6yZ" firstAttribute="leading" secondItem="yhf-x3-bYm" secondAttribute="leading" id="dd0-df-xGH"/>
+                            <constraint firstItem="aEg-K8-COg" firstAttribute="centerX" secondItem="iUE-su-6yZ" secondAttribute="centerX" id="eLu-0k-Bpn"/>
+                            <constraint firstItem="iUE-su-6yZ" firstAttribute="leading" secondItem="0MO-AT-sBr" secondAttribute="leadingMargin" constant="72" id="obf-t6-MYA"/>
+                            <constraint firstItem="iUE-su-6yZ" firstAttribute="trailing" secondItem="yhf-x3-bYm" secondAttribute="trailing" id="tcZ-rr-X4Y"/>
                         </constraints>
                     </view>
                     <connections>
@@ -81,14 +83,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="180" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JJ-KQ-0ix">
-                                <rect key="frame" x="286" y="289" width="29" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="逃げ回ってください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="At8-4S-uhu">
+                                <rect key="frame" x="224" y="491" width="153" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="逃げ回ってください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="At8-4S-uhu">
-                                <rect key="frame" x="224" y="491" width="153" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JJ-KQ-0ix">
+                                <rect key="frame" x="262" y="289" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
