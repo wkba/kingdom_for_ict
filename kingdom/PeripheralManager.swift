@@ -8,14 +8,16 @@
 
 import CoreBluetooth
 import CoreLocation
+import UIKit
+
 
 class PeripheralManager: CBPeripheralManager {
     
     private static let sharedInstance = PeripheralManager()
     private let beaconIdentifier = "ffff"
     private let uuidString = "B9407F30-F5F8-466E-AFF9-25556B57FE6D"
-    var major: CLBeaconMajorValue = 1
-    var minor: CLBeaconMajorValue = 1
+    var major = 1
+    var minor = 1
     
     /**
      ペリフェラルとしてアドバタイジングを開始する
@@ -24,12 +26,25 @@ class PeripheralManager: CBPeripheralManager {
         // delegateに代入すると CBPeripheralManagerDelegate のメソッドが呼び出される
         sharedInstance.delegate = sharedInstance
     }
+//    init(major:Int, minor:Int){
+//        self.major = major
+//        self.minor = minor
+//    }
+    func setValues(){
+        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.major = (appDelegate.team_number)!
+        self.minor = (appDelegate.position_number)!
+    }
+    func stopAdvertising(manager: CBPeripheralManager) {
+        manager.stopAdvertising()
+    }
 }
 
 
 // MARK: - CBPeripheralManagerDelegate
 
 extension PeripheralManager: CBPeripheralManagerDelegate {
+    
     
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager) {
         switch peripheral.state {
@@ -66,8 +81,11 @@ extension PeripheralManager: CBPeripheralManagerDelegate {
         guard let proximityUUID = NSUUID(UUIDString: uuidString) else {
             return
         }
-        let beaconRegion = CLBeaconRegion(proximityUUID: proximityUUID, major: major, minor: minor, identifier: beaconIdentifier)
+        setValues()
+        print("自分のmajorは" + String(major) + "  minorは" + String(minor) )
+        let beaconRegion = CLBeaconRegion(proximityUUID: proximityUUID, major: UInt16(major), minor: UInt16(minor), identifier: beaconIdentifier)
         let beaconPeripheralData: NSDictionary = beaconRegion.peripheralDataWithMeasuredPower(nil)
         manager.startAdvertising(beaconPeripheralData as? [String: AnyObject])
     }
+    
 }
