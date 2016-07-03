@@ -32,9 +32,9 @@ class ActionVC: UIViewController,CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setValues()
+        //setValues()
         // startAdvertising
-        PeripheralManager.startAdvertising()
+        //PeripheralManager.startAdvertising()
         
         // Do any additional setup after loading the view, typically from a nib.
         locationManager.delegate = self
@@ -42,6 +42,9 @@ class ActionVC: UIViewController,CLLocationManagerDelegate {
             locationManager.requestWhenInUseAuthorization()
         }
         locationManager.startRangingBeaconsInRegion(region)
+        
+        //let img:UIImage = UIImage(named:"icon[0][0].png")!
+        //self.myImage = UIImageView(image:img)
     }
     
     override func didReceiveMemoryWarning() {
