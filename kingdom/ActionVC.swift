@@ -9,11 +9,14 @@
 import UIKit
 import CoreLocation
 import CoreBluetooth
+import Firebase
 
 
-class ActionVC: UIViewController,CLLocationManagerDelegate {
+
+class ActionVC: UIViewController,CLLocationManagerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var iconImageButton: UIButton!
     let locationManager = CLLocationManager()
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!, identifier: "Estimotes")
     // Note: make sure you replace the keys here with your own beacons' Minor Values
@@ -29,10 +32,37 @@ class ActionVC: UIViewController,CLLocationManagerDelegate {
     var position_num = 999
     var position_name = "error"
     var isEnd = false
+    var message = ""
+    var RoomID:String = "123456"
+    var uuid:String = "error"
+    var ref = Firebase(url:"https://ict-kingdom.firebaseio.com/chat")
     
+    @IBAction func textDieldDidEndOnExit(sender: UITextField) {
+        //let message = message_field.text
+        //print(message)
+    }
+    @IBOutlet weak var message_field: UITextField!
+    @IBAction func send_message_button(sender: AnyObject) {
+        let pre =  message_area_label.text! + "\n"
+        let now = "   \(position_name):   \(self.message)"
+//        message_area_label.text = pre + now
+          ref.setValue(pre + now)
+
+    }
+    @IBOutlet weak var message_area_label: UILabel!
+    @IBOutlet weak var message_area: scroll_custom!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setValues()
+        
+        
+        ref.observeEventType(.Value, withBlock: {
+            snapshot in
+            self.message_area_label.text = snapshot.value as? String
+        })
+        
+        message_field.delegate = self
+        message_area_label.sizeToFit()
+        setValues()
         // startAdvertising
         //PeripheralManager.startAdvertising()
         
@@ -51,6 +81,12 @@ class ActionVC: UIViewController,CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func viewDidAppear(animated: Bool) {
+        //UIScrollBar表示時にスクロールバーをフラッシュ表示
+        message_area.flashScrollIndicators()
+    }
+    
+
     
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
         if (isEnd == false){
@@ -90,12 +126,30 @@ class ActionVC: UIViewController,CLLocationManagerDelegate {
     }
     
     func setValues(){
-        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        self.team_num = (appDelegate.team_number)!
-        self.team_name = (appDelegate.team_name)!
-        self.position_num = (appDelegate.position_number)!
-        self.position_name = (appDelegate.position_name)!
+//        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        self.team_num = (appDelegate.team_number)!
+//        self.team_name = (appDelegate.team_name)!
+//        self.position_num = (appDelegate.position_number)!
+//        self.position_name = (appDelegate.position_name)!
+        ref.setValue("")
+        self.team_num = 1
+        self.team_name = "呉"
+        self.position_num = 1
+        self.position_name = "軍師"
+        let iconImage:UIImage = UIImage(named: "icon[" + String(self.team_num) + "][" + String(self.position_num) + "].png")!;
+        self.iconImageButton.setBackgroundImage(iconImage, forState: UIControlState.Normal);
+        self.statusLabel.text = "team: \(self.team_name)\nposition: \(self.position_name)"
+        
         print("自分は" + self.team_name + "の" + self.position_name)
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool{
+        
+        self.message = message_field.text!
+        print(self.message)
+        // キーボードを閉じる
+        textField.resignFirstResponder()
+
+        return true
     }
     
 }
