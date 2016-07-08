@@ -43,10 +43,10 @@ class ActionVC: UIViewController,CLLocationManagerDelegate, UITextFieldDelegate 
     }
     @IBOutlet weak var message_field: UITextField!
     @IBAction func send_message_button(sender: AnyObject) {
-        let pre =  message_area_label.text! + "\n"
-        let now = "   \(position_name):   \(self.message)"
-//        message_area_label.text = pre + now
-          ref.setValue(pre + now)
+          let pre =  message_area_label.text! + "\n"
+          let now = "   \(position_name):   \(self.message)"
+          message_area_label.text = pre + now
+          ref.setValue(now)
 
     }
     @IBOutlet weak var message_area_label: UILabel!
@@ -59,7 +59,6 @@ class ActionVC: UIViewController,CLLocationManagerDelegate, UITextFieldDelegate 
             snapshot in
             self.message_area_label.text = snapshot.value as? String
         })
-        
         message_field.delegate = self
         message_area_label.sizeToFit()
         setValues()
@@ -131,7 +130,7 @@ class ActionVC: UIViewController,CLLocationManagerDelegate, UITextFieldDelegate 
 //        self.team_name = (appDelegate.team_name)!
 //        self.position_num = (appDelegate.position_number)!
 //        self.position_name = (appDelegate.position_name)!
-        ref.setValue("")
+        ref.setValue("チーム内でのメッセージがここに表示されます。")
         self.team_num = 1
         self.team_name = "呉"
         self.position_num = 1
