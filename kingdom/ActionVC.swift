@@ -37,6 +37,10 @@ class ActionVC: UIViewController,CLLocationManagerDelegate, UITextFieldDelegate 
     var uuid:String = "error"
     var ref = Firebase(url:"https://ict-kingdom.firebaseio.com/chat")
     
+    @IBOutlet weak var basic_part: UIView!
+    @IBOutlet weak var view_1st: UIView!
+    @IBOutlet weak var view_2nd: UIView!
+    @IBOutlet weak var view_3rd: UIView!
     @IBAction func textDieldDidEndOnExit(sender: UITextField) {
         //let message = message_field.text
         //print(message)
@@ -51,6 +55,26 @@ class ActionVC: UIViewController,CLLocationManagerDelegate, UITextFieldDelegate 
 
     }
     
+    @IBAction func changeViewSegment(sender: AnyObject) {
+        if (sender.selectedSegmentIndex == 0) {
+            //最初のセグメントが0。セグメント数に合わせて条件分岐を
+            print("セグメント0")
+            view_1st.hidden = false;
+            view_2nd.hidden = true;
+            view_3rd.hidden = true;
+        } else if (sender.selectedSegmentIndex == 1) {
+            print("セグメント1")
+            view_1st.hidden = true;
+            view_2nd.hidden = false;
+            view_3rd.hidden = true;
+        } else if (sender.selectedSegmentIndex == 2) {
+            print("セグメント2")
+            view_1st.hidden = true;
+            view_2nd.hidden = true;
+            view_3rd.hidden = false;
+        }
+        
+    }
     @IBOutlet weak var message_area_label: UILabel!
     @IBOutlet weak var message_area: scroll_custom!
     override func viewDidLoad() {
@@ -70,7 +94,7 @@ class ActionVC: UIViewController,CLLocationManagerDelegate, UITextFieldDelegate 
         ref.observeEventType(.ChildAdded, withBlock: { snapshot in
             if let name = snapshot.value.objectForKey("name") as? String,
                 message = snapshot.value.objectForKey("message") as? String {
-                self.message_area_label.text = "\(self.message_area_label.text!)    \n\(name)  :  \(message)"
+                self.message_area_label.text = "\(self.message_area_label.text!)\n\(name) : \(message)"
             }
         })
         
