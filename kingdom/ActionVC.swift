@@ -42,6 +42,7 @@ class ActionVC: UIViewController,CLLocationManagerDelegate, UITextFieldDelegate 
         //print(message)
     }
     @IBOutlet weak var message_field: UITextField!
+    
     @IBAction func send_message_button(sender: AnyObject) {
           let pre =  message_area_label.text! + "\n"
           let now = "   \(position_name):   \(self.message)"
@@ -49,21 +50,34 @@ class ActionVC: UIViewController,CLLocationManagerDelegate, UITextFieldDelegate 
           ref.setValue(now)
 
     }
+    
     @IBOutlet weak var message_area_label: UILabel!
     @IBOutlet weak var message_area: scroll_custom!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        ref.observeEventType(.Value, withBlock: {
-            snapshot in
-            self.message_area_label.text = snapshot.value as? String
-        })
+//        ref.observeEventType(.Value, withBlock: {
+//            snapshot in
+//            self.message_area_label.text = snapshot.value as? String
+//        })
         message_field.delegate = self
         message_area_label.sizeToFit()
         setValues()
-        // startAdvertising
+        
+        
+        
+        ref.observeEventType(.ChildAdded, withBlock: { snapshot in
+            if let name = snapshot.value.objectForKey("name") as? String,
+                message = snapshot.value.objectForKey("message") as? String {
+                self.message_area_label.text = "\(self.message_area_label.text!)    \n\(name)  :  \(message)"
+            }
+        })
+        
+        // startAdvertising ここコメントアウトしないと発信しない
         //PeripheralManager.startAdvertising()
+        
+        
         
         // Do any additional setup after loading the view, typically from a nib.
         locationManager.delegate = self
@@ -141,15 +155,24 @@ class ActionVC: UIViewController,CLLocationManagerDelegate, UITextFieldDelegate 
         
         print("自分は" + self.team_name + "の" + self.position_name)
     }
+    
+//    func textFieldShouldReturn(textField: UITextField) -> Bool{
+//        self.message = message_field.text!
+//        print(self.message)
+//        // キーボードを閉じる
+//        textField.resignFirstResponder()
+//        return true
+//    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool{
         
-        self.message = message_field.text!
-        print(self.message)
-        // キーボードを閉じる
+        let messageData = ["name": self.position_name, "message": message_field.text!]
+        ref.childByAutoId().setValue(messageData)
+        
         textField.resignFirstResponder()
-
+        message_field.text = ""
+        
         return true
     }
-    
 }
 

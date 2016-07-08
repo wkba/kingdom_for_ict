@@ -7,6 +7,8 @@ target 'kingdom' do
 
   # Pods for kingdom
   pod 'Firebase', '= 2.5.1'
+  pod 'JSQMessagesViewController', :git => 'https://github.com/jessesquires/JSQMessagesViewController', :tag => '7.2.0'
+
 
   target 'kingdomTests' do
     inherit! :search_paths

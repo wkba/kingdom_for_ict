@@ -1,12 +1,28 @@
 PODS:
   - Firebase (2.5.1)
+  - JSQMessagesViewController (7.2.0):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
 
 DEPENDENCIES:
   - Firebase (= 2.5.1)
+  - JSQMessagesViewController (from `https://github.com/jessesquires/JSQMessagesViewController`, tag `7.2.0`)
+
+EXTERNAL SOURCES:
+  JSQMessagesViewController:
+    :git: https://github.com/jessesquires/JSQMessagesViewController
+    :tag: 7.2.0
+
+CHECKOUT OPTIONS:
+  JSQMessagesViewController:
+    :git: https://github.com/jessesquires/JSQMessagesViewController
+    :tag: 7.2.0
 
 SPEC CHECKSUMS:
   Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
+  JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
 
-PODFILE CHECKSUM: f0b6e2e49203d3240cd2a29abc0a11b29a05e3d8
+PODFILE CHECKSUM: 4c9e865abdbd6ec7a76c1d63ced87a3a6a6d79b7
 
 COCOAPODS: 1.0.1
